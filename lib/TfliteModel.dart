@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
@@ -49,7 +49,7 @@ class _TfliteModelState extends State<TfliteModel> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Fruits Image Identifier"),
+        title: const Text("Image Identifier"),
         centerTitle: true,
       ),
       body: ListView(
@@ -64,7 +64,8 @@ class _TfliteModelState extends State<TfliteModel> {
                   child: const Opacity(
                     opacity: 0.8,
                     child: Center(
-                      child: Text("No image selected"),
+                      child: Text(
+                          "click the floating action button to select an image"),
                     ),
                   ),
                 ),
@@ -78,7 +79,8 @@ class _TfliteModelState extends State<TfliteModel> {
                           child: Text(
                             "${result['label']} - ${result['confidence'].toStringAsFixed(2)}",
                             style: const TextStyle(
-                                color: Colors.red, fontSize: 20),
+                                color: Color.fromARGB(255, 19, 15, 14),
+                                fontSize: 30),
                           ),
                         ),
                       );
@@ -91,7 +93,7 @@ class _TfliteModelState extends State<TfliteModel> {
       floatingActionButton: FloatingActionButton(
         onPressed: pickImage,
         tooltip: "Pick Image",
-        child: const Icon(Icons.image),
+        child: const Icon(Icons.add_photo_alternate_outlined),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );

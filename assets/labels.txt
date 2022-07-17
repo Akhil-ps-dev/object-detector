@@ -1,2 +1,6 @@
-0 mango
-1 apple
+0 carrot
+1 tomato
+2 coconut
+3 jackfruit
+4 onion
+5 tapioca
